@@ -27,3 +27,8 @@
 
 ## NOTE
   - [Basic component](https://facebook.github.io/react-native/docs/components-and-apis) 
+
+## TRIC
+  - key board shortcut vs code
+  - code -> preferences -> keyboard shortcut -> search format document -> set fn+f1 
+  - select prettier 
