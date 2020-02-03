@@ -35,3 +35,4 @@
 
 ## TOOLS
   - ScrollView สามารถ slide screen ได้
+  - FlatList เหมาะกับกรณีมี หลาย parameter ที่อยากจะ render item * เรื่องของ key ถ้าตั้ง key default ไม่จำเป็นต้องใส่ keyExtractor={} เพื่อระบุ key แต่ถ้าเปลี่ยน key เป็นชื่ออื่นจะต้องใส่ keyExtractor
