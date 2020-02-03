@@ -24,3 +24,6 @@
     - export PATH=/Users/myuser/Library/Android/sdk/platform-tools:$PATH
     - ref. [Reference](https://docs.expo.io/versions/v36.0.0/workflow/android-studio-emulator)
     - restart mac book
+
+## NOTE
+  - [Basic component](https://facebook.github.io/react-native/docs/components-and-apis) 
