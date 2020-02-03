@@ -24,3 +24,25 @@
     - export PATH=/Users/myuser/Library/Android/sdk/platform-tools:$PATH
     - ref. [Reference](https://docs.expo.io/versions/v36.0.0/workflow/android-studio-emulator)
     - restart mac book
+
+## How To Debug REACT-NATIVE
+  - console.log();
+  - reloading cmd + r
+  - IOS
+    - cmd + d 
+    - debug Remote JS
+    - open link http://localhost:19002/debugger-ui
+    - if stop debugger cmd + d Stop Remote JS Debugging
+
+  - ANDROID
+    - cmd + m
+    - debug JS Remotely 
+    - open link http://localhost:19002/debugger-ui
+    - if stop debugger cmd + m Stop Remote JS Debugging
+
+  - react native debugger 
+    - can use with developer include redux in project
+    - open react native debugger 
+    - cmd + t
+    - input port 19002
+    - and oprn debug remote js in IOS or Android
