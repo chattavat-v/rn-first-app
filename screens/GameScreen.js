@@ -1,5 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { View, Text, StyleSheet, Alert, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Alert,
+  FlatList,
+  Dimensions
+} from "react-native";
 import NumberContainer from "../components/NumberContainer";
 import Card from "../components/Card";
 import DefaultStyes from "../constants/default-styles";
@@ -68,6 +75,12 @@ const GameScreen = props => {
     ]);
   };
 
+  let listContainerStyle = styles.listContainer;
+
+  if (Dimensions.get("window").width < 350) {
+    listContainerStyle = styles.listContainerBig;
+  }
+
   return (
     <View style={styles.screen}>
       <Text style={DefaultStyes.title}>Opponent's Guess</Text>
@@ -80,7 +93,7 @@ const GameScreen = props => {
           <Ionicons name="md-add" size={24} color="white" />
         </MainButton>
       </Card>
-      <View style={styles.listContainer}>
+      <View style={listContainerStyle}>
         <FlatList
           keyExtractor={item => item}
           data={pastGuesses}
@@ -100,14 +113,18 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
-    justifyContent: "center",
-    marginTop: 20,
+    justifyContent: "space-around",
+    marginTop: Dimensions.get("window").height > 600 ? 20 : 10,
     width: 400,
     maxWidth: "90%"
   },
   listContainer: {
     flex: 1,
     width: "60%"
+  },
+  listContainerBig: {
+    flex: 1,
+    width: "80%"
   },
   list: {
     flexGrow: 1,
