@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import uuid from 'uuid';
 import {
   View,
   Text,
@@ -95,7 +96,7 @@ const GameScreen = props => {
       </Card>
       <View style={listContainerStyle}>
         <FlatList
-          keyExtractor={item => item}
+          keyExtractor={item => uuid.v4()}
           data={pastGuesses}
           renderItem={renderListItem.bind(this, pastGuesses.length)}
           contentContainerStyle={styles.list}
