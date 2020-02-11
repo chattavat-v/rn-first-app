@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Colors from "../constants/colors";
 import TitleText from "../components/TitleText";
+import { connect } from "react-redux";
+import { getData } from "../redux/actions/data";
+import PropTypes from "prop-types";
 
-const Header = ({ title }) => {
+const Header = ({ title, getData, data }) => {
+  useEffect(() => {
+    getData();
+  }, [getData]);
+
+  console.log(data)
+
   return (
     <View style={styles.header}>
       <TitleText>{title}</TitleText>
@@ -22,4 +31,13 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Header;
+Header.propTypes = {
+  getData: PropTypes.func.isRequired,
+  data: PropTypes.array.isRequired
+};
+
+const mapStateToProps = state => ({
+  data: state.data.data
+});
+
+export default connect(mapStateToProps, { getData })(Header);

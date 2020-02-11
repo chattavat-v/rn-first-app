@@ -6,6 +6,8 @@ import GameScreen from "./screens/GameScreen";
 import GameOverScreen from "./screens/GameOverScreen";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+import { Provider } from "react-redux";
+import store from "./redux/strore";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -24,7 +26,7 @@ export default function App() {
       <AppLoading
         startAsync={fetchFonts}
         onFinish={() => setDataLoaded(true)}
-        onError={(err) => console.log(err)}
+        onError={err => console.log(err)}
       />
     );
   }
@@ -61,10 +63,12 @@ export default function App() {
   }
 
   return (
-    <View style={styles.screen}>
-      <Header title="Guess a Number" />
-      {content}
-    </View>
+    <Provider store={store}>
+      <View style={styles.screen}>
+        <Header title="Guess a Number" />
+        {content}
+      </View>
+    </Provider>
   );
 }
 
